@@ -174,7 +174,7 @@ const Terminal: React.FC<TerminalProps> = ({ className }) => {
         <div className="flex justify-center items-center min-h-screen bg-[#0a0a0a]">
             <div 
                 ref={terminalRef}
-                className={`font-mono text-sm p-10 bg-[#0a0a0a] text-[#39ff14] min-h-[600px] max-h-[800px] overflow-y-auto w-full max-w-4xl ${className || ''}`}
+                className={`font-mono text-sm p-10 bg-[#0a0a0a] text-[#39ff14] min-h-[600px] max-h-[800px] overflow-y-auto w-full max-w-4xl flex flex-col ${className || ''}`}
             >
                 <div className="whitespace-pre-wrap mb-2">
                     {lines.join('\n')}
@@ -191,6 +191,7 @@ const Terminal: React.FC<TerminalProps> = ({ className }) => {
                         autoFocus
                     />
                 </div>
+                <div className='bg-red grow' onClick={() => inputRef.current?.focus()}></div>
             </div>
         </div>
     );
